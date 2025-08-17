@@ -24,7 +24,6 @@ namespace wp_boot
         }
     }
 
-    // Ana uygulama sınıfı
     public class FileProcessorApp
     {
         private readonly Logger _logger = LogManager.GetCurrentClassLogger();
@@ -76,7 +75,7 @@ namespace wp_boot
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("=== DOSYA İŞLEMCİ ===");
+            Console.WriteLine("=== DOSYA Düzenleyici ===");
             Console.ResetColor();
             Console.WriteLine("1. Envanter Kontrolü");
             Console.WriteLine("2. Metin Özeti");
@@ -324,7 +323,7 @@ namespace wp_boot
         }
     }
 
-    // Yapılandırma sınıfı
+    // Yapılandırma 
     public class Config
     {
         public int LowStockThreshold { get; set; } = 10;
@@ -333,7 +332,7 @@ namespace wp_boot
         public bool EnableLogging { get; set; } = true;
     }
 
-    // Envanter işlemci arayüzü
+    // Envanter 
     public interface IInventoryProcessor
     {
         void CheckDuplicates(string filePath);
@@ -342,7 +341,7 @@ namespace wp_boot
         List<InventoryItem> LoadInventory(string filePath);
     }
 
-    // Envanter işlemci 
+    // Envanter 
     public class InventoryProcessor : IInventoryProcessor
     {
         private readonly Config _config;
@@ -399,7 +398,7 @@ namespace wp_boot
             Console.WriteLine($"Kritik stok ({_config.CriticalStockThreshold} adet altında): {criticalStock.Count} ürün");
             Console.ResetColor();
 
-            // Basit metin tabanlı grafik oluşturma
+            // Basit metin tabanlı grafik
             GenerateTextStockChart(inventory);
         }
 
@@ -582,13 +581,13 @@ namespace wp_boot
         }
     }
 
-    // Metin özeti işlemci arayüzü
+    // Metin özeti 
     public interface ITextSummaryProcessor
     {
         string GenerateSummary(string filePath);
     }
 
-    // Metin özeti işlemci 
+    // Metin özeti  
     public class TextSummaryProcessor : ITextSummaryProcessor
     {
         public string GenerateSummary(string filePath)
@@ -650,7 +649,7 @@ namespace wp_boot
         }
     }
 
-    // Dosya dönüştürücü arayüzü
+    // Dosya dönüştürücü
     public interface IFileConverter
     {
         void ConvertFile(string sourcePath, string outputPath, string conversionType, int sheetNumber);
@@ -669,7 +668,7 @@ namespace wp_boot
 
             if (sheetNumber > 0 && sheetNumber <= workbook.Worksheets.Count)
             {
-                // Belirli bir sayfayı dönüştürmek için geçici çalışma kitabı oluştur
+                // Belirli bir sayfayı dönüştürmek için geçici çalışma kitabı oluşturmak için
                 var tempWorkbook = new Workbook();
                 var tempWorksheet = tempWorkbook.Worksheets[0];
 
@@ -723,7 +722,7 @@ namespace wp_boot
         }
     }
 
-    // Toplu işlemci arayüzü
+    // Toplu işlemci 
     public interface IBatchProcessor
     {
         void ProcessBatch(string folderPath, string operationType);
@@ -863,7 +862,7 @@ namespace wp_boot
         }
     }
 
-    // Rapor oluşturucu arayüzü
+    // Rapor oluşturucu 
     public interface IReportGenerator
     {
         void GenerateReport(object data, string title, string filePath = null);
@@ -956,7 +955,7 @@ namespace wp_boot
         string CreateBackup(string filePath);
     }
 
-    // Yedekleme servisi implementasyonu
+    // Yedekleme servisi 
     public class BackupService : IBackupService
     {
         public string CreateBackup(string filePath)
