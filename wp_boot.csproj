@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>ASH</Authors>
+    <Company>MEhmet</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ABCpdf" Version="13.0.1.1" />
+    <PackageReference Include="Aspose.Cells" Version="24.5.0" />
+    <PackageReference Include="Aspose.PDF" Version="24.5.0" />
+    <PackageReference Include="Aspose.Words" Version="24.5.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.0.2" />
+    <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.0.2" />
+    <PackageReference Include="DocumentFormat.OpenXml.VariableReplacer" Version="0.1.0" />
+    <PackageReference Include="EPPlus" Version="7.1.0" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
+    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
+    <PackageReference Include="NLog" Version="6.0.3" />
+    <PackageReference Include="ScottPlot" Version="5.0.55" />
+    <PackageReference Include="Spire.PDF" Version="10.4.7" />
+    <PackageReference Include="Spire.XLS" Version="14.4.7" />
+    <PackageReference Include="System.Net.NetworkInformation" Version="4.3.0" />
+    <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
+    <PackageReference Include="System.Security.AccessControl" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
